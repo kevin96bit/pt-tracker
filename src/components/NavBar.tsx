@@ -101,9 +101,11 @@ l-29 42 -3 -42 c-3 -38 -6 -43 -28 -43 l-24 0 0 130 0 130 60 0 c51 0 65 -4
       </div>
       {/* Contenitore a destra con il login */}
       <div className=" mr-3">
+          <Link href='/accedi'>
         <Button className="text-2xl">
-          Login <CiLogin />
+            Login <CiLogin />
         </Button>
+            </Link>
       </div>
     </div>
   );
