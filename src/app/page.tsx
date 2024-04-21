@@ -117,6 +117,30 @@ export default function Home() {
           </p>
         </a>
       </div>
+
+      {/* griglia da usare in futuro */}
+      <div className="grid grid-flow-row grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="bg-slate-300 group h-full rounded-[12px] shadow-sm   p-10">
+          Lorem ipsum dolor sit amet.
+        </div>
+        <div className="bg-slate-300 group h-full rounded-[12px] shadow-sm   p-10">
+          Lorem ipsum dolor sit amet.
+        </div>
+        <div className="bg-slate-300 group h-full rounded-[12px] shadow-sm   p-10">
+          Lorem ipsum dolor sit amet.
+        </div>
+        <div className="bg-slate-300 group h-full rounded-[12px] shadow-sm   p-10">
+          Lorem ipsum dolor sit amet.
+        </div>
+        <div className="bg-slate-300 group h-full rounded-[12px] shadow-sm   p-10">
+          Lorem ipsum dolor sit amet.
+        </div>
+        <div className="bg-slate-300 group h-full rounded-[12px] shadow-sm   p-10">
+          Lorem ipsum dolor sit amet.
+        </div>
+      </div>
     </main>
   );
 }
+
+
