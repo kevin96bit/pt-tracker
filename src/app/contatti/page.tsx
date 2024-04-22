@@ -4,11 +4,7 @@ import Image from "next/image";
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
-const Page = ({
-  contactButtonRef,
-}: {
-  contactButtonRef: React.RefObject<any>;
-}) => {
+const Page = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [errore, setErrore] = useState<boolean>(false);
   const [successo, setSuccesso] = useState<boolean>(false);
@@ -33,8 +29,6 @@ const Page = ({
       );
   };
 
-  // Console log per controllare il valore del ref
-  console.log("Contact ref:", contactButtonRef);
 
   return (
     <section className="flex items-center justify-center">
@@ -121,5 +115,4 @@ const Page = ({
   );
 };
 
-// Esporta il componente page come default
 export default Page;
