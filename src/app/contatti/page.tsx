@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
+
 const Page = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [errore, setErrore] = useState<boolean>(false);
@@ -31,8 +32,8 @@ const Page = () => {
 
 
   return (
-    <section className="flex items-center justify-center">
-      <div className="w-3/4 flex flex-col h-screen items-center justify-center">
+    <section className="min-h-screen flex items-center justify-center">
+      <div className="w-3/4 flex flex-col min-h-screen items-center justify-center">
         <div className="w-3/4 border rounded-md h-2/3 shadow-lg shadow-slate-400">
           <div className="w-full h-10 bg-blue-400 rounded">
             <div className=" w-full h-full flex justify-end items-center">
@@ -60,22 +61,22 @@ const Page = () => {
                     type="text"
                     placeholder="Nome"
                     name="name"
-                    className="border border-blue-300 rounded px-4 py-2"
+                    className="border border-blue-300 rounded px-4 py-2 outline-none"
                   />
                   <input
                     type="email"
                     placeholder="Email"
                     name="email"
-                    className="border border-blue-300 rounded px-4 py-2"
+                    className="border border-blue-300 rounded px-4 py-2 outline-none"
                   />
                   <textarea
                     rows={8}
                     placeholder="Messaggio"
                     name="message"
-                    className="border border-blue-300 rounded px-4 py-2"
+                    className="border border-blue-300 rounded px-4 py-2 outline-none"
                   ></textarea>
                   <button className="bg-blue-500 text-white font-semibold px-4 py-2 rounded hover:bg-blue-600">
-                    Invia
+                    Invia messaggio
                   </button>
                   {/* Utilizza flex e items-center per centrare le span orizzontalmente */}
                   <div className="pt-1 mx-auto flex items-center">

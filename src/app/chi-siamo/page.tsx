@@ -4,7 +4,7 @@ import Link from "next/link";
 const page = () => {
   return (
     <section className="flex items-center justify-center">
-      <div className=" w-3/4  flex flex-col h-screen items-center">
+      <div className=" w-3/4  flex flex-col min-h-screen items-center">
         <p className=" mt-3 text-4xl font-semibold">La mia missione🚀</p>
         <br />
         <p className="text-2xl">Vi è mai capitato di pensare: </p>

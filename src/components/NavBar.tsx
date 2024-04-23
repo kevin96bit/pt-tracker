@@ -4,6 +4,8 @@ import { FaPeopleGroup } from "react-icons/fa6";
 import { Button } from "./ui/button";
 import { CiLogin } from "react-icons/ci";
 import { AiTwotoneHome } from "react-icons/ai";
+import { LuFileQuestion } from "react-icons/lu";
+// import { PiFinnTheHumanLight } from "react-icons/pi";
 
 const NavBar = () => {
   return (
@@ -76,7 +78,7 @@ l-29 42 -3 -42 c-3 -38 -6 -43 -28 -43 l-24 0 0 130 0 130 60 0 c51 0 65 -4
           <Link href="/">
             <p className="text-2xl font-semibold hover:text-indigo-600">Home</p>
           </Link>
-          <AiTwotoneHome className="ml-1" />
+          <AiTwotoneHome className="ml-1" size={27} />
         </div>
         {/* div chi-siamo */}
         <div className="flex items-center">
@@ -86,7 +88,7 @@ l-29 42 -3 -42 c-3 -38 -6 -43 -28 -43 l-24 0 0 130 0 130 60 0 c51 0 65 -4
               Chi siamo
             </p>
           </Link>
-          <FaPeopleGroup className="ml-1" />
+          <FaPeopleGroup className="ml-1" size={27} />
         </div>
         <div className="flex items-center">
           {" "}
@@ -96,16 +98,27 @@ l-29 42 -3 -42 c-3 -38 -6 -43 -28 -43 l-24 0 0 130 0 130 60 0 c51 0 65 -4
               Contatti
             </p>
           </Link>
-          <GrContact className="ml-1" />
+          <GrContact className="ml-1" size={27} />
+        </div>
+        <div className="flex items-center">
+          {" "}
+          {/* div faq */}
+          <Link href="/faq">
+            <p className=" text-2xl font-semibold hover:text-indigo-600">
+              FAQ
+            </p>
+          </Link>
+          <LuFileQuestion className="ml-1" size={27} />
         </div>
       </div>
+      
       {/* Contenitore a destra con il login */}
       <div className=" mr-3">
-          <Link href='/accedi'>
-        <Button className="text-2xl">
+        <Link href="/accedi">
+          <Button className="text-2xl">
             Login <CiLogin />
-        </Button>
-            </Link>
+          </Button>
+        </Link>
       </div>
     </div>
   );
