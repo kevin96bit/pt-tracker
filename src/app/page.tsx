@@ -1,68 +1,13 @@
 // import { Button } from "@/components/ui/button";
 import Image from "next/image";
+// import { CgGym } from "react-icons/cg";
 // import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-slate-500 ">
-      <div className="z-10 bg-blue-400  w-full max-w-5xl items-center justify-between text-sm lg:flex">
-        <p>eccomi qui</p>
-      </div>
-
-      
-
-      {/* griglia da usare in futuro */}
-      <div className="grid grid-flow-row grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <div className="bg-slate-300 group h-full rounded-[12px] shadow-sm   p-10">
-          Lorem ipsum dolor sit amet.
-        </div>
-        <div className="bg-slate-300 group h-full rounded-[12px] shadow-sm   p-10">
-          Lorem ipsum dolor sit amet.
-        </div>
-        <div className="bg-slate-300 group h-full rounded-[12px] shadow-sm   p-10">
-          Lorem ipsum dolor sit amet.
-        </div>
-        <div className="bg-slate-300 group h-full rounded-[12px] shadow-sm   p-10">
-          Lorem ipsum dolor sit amet.
-        </div>
-        <div className="bg-slate-300 group h-full rounded-[12px] shadow-sm   p-10">
-          Lorem ipsum dolor sit amet.
-        </div>
-        <div className="bg-slate-300 group h-full rounded-[12px] shadow-sm   p-10">
-          Lorem ipsum dolor sit amet.
-        </div>
-      </div>
-
+    <main className="flex min-h-screen flex-col p-5  ">
       {/* contenitore che racchiude gli input e select */}
-      <div className="w-full flex">
-        {/* input per avviare la ricerca */}
-        <div className="w-56 p-2 rounded-md border flex">
-          <div className=" w-10 flex justify-center">
-            <svg
-              role="img"
-              aria-hidden="true"
-              width="24px"
-              height="24px"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g
-                id="Lens"
-                stroke="none"
-                stroke-width="1"
-                fill="#aeb9c6"
-                fill-rule="evenodd"
-              >
-                <path d="M15.597 14.205a.989.989 0 0 1 .098.086l5.014 5.014a.993.993 0 1 1-1.404 1.404l-5.014-5.014a1.002 1.002 0 0 1-.086-.098 7 7 0 1 1 1.392-1.392zM10 15a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"></path>
-              </g>
-            </svg>
-          </div>
-          <input
-            type="search"
-            className="r w-full outline-none"
-            placeholder="cosa cerchi?"
-          ></input>
-        </div>
+      <div className="w-full flex justify-center">
         {/* select per la categoria */}
         <div className="w-56 p-2 rounded-md border flex ml-4">
           <div className=" w-10 flex justify-center">
@@ -75,9 +20,11 @@ export default function Home() {
           </div>
           <select className="r w-full outline-none">
             <option value="">Seleziona uno sport</option>
-            <option value="sport1">Sport 1</option>
-            <option value="sport2">Sport 2</option>
-            <option value="sport3">Sport 3</option>
+            <option value="sport1">Bodybuilding</option>
+            <option value="sport2">Calisthenics</option>
+            <option value="sport3">Powerlifting</option>
+            <option value="sport3">CrossFit</option>
+            <option value="sport3">Funzionale</option>
           </select>
         </div>
         {/* input per la posizione */}
@@ -90,7 +37,7 @@ export default function Home() {
               height="24px"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink" // nota la differenza qui
+              xmlnsXlink="http://www.w3.org/1999/xlink"
               className=""
             >
               <g
@@ -109,6 +56,35 @@ export default function Home() {
             className="r w-full outline-none"
             placeholder="Dove ti trovi?"
           ></input>
+        </div>
+      </div>
+      <div className="w-full p-[1px] bg-blue-200 my-5"></div>
+
+      {/* griglia da usare in futuro */}
+      <div className="flex flex-col gap-4 items-center">
+        {/* pt1 */}
+        <div className="bg-slate-300 hover:bg-blue-200  rounded-[12px] shadow-sm  p-5 w-3/4">
+          <div className="w-[10rem] bg-blue-300 h-[10em] border rounded-[12px]"></div>{" "}
+        </div>
+        {/* pt2 */}
+        <div className="bg-slate-300 hover:bg-blue-200  rounded-[12px] shadow-sm  p-5  w-3/4">
+          <div className="w-[10rem] bg-blue-300 h-[10em] border rounded-[12px]"></div>{" "}
+        </div>
+        {/* pt3 */}
+        <div className="bg-slate-300 hover:bg-blue-200  rounded-[12px] shadow-sm  p-5 w-3/4">
+          <div className="w-[10rem] bg-blue-300 h-[10em] border rounded-[12px]"></div>{" "}
+        </div>
+        {/* pt4 */}
+        <div className="bg-slate-300 hover:bg-blue-200  rounded-[12px] shadow-sm  p-5 w-3/4">
+          <div className="w-[10rem] bg-blue-300 h-[10em] border rounded-[12px]"></div>{" "}
+        </div>
+        {/* pt5 */}
+        <div className="bg-slate-300 hover:bg-blue-200  rounded-[12px] shadow-sm  p-5 w-3/4">
+          <div className="w-[10rem] bg-blue-300 h-[10em] border rounded-[12px]"></div>{" "}
+        </div>
+        {/* pt6 */}
+        <div className="bg-slate-300 hover:bg-blue-200  rounded-[12px] shadow-sm  p-5 w-3/4">
+          <div className="w-[10rem] bg-blue-300 h-[10em] border rounded-[12px]"></div>{" "}
         </div>
       </div>
     </main>
