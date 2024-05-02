@@ -1,0 +1,30 @@
+[
+  {
+    "id": 2,
+    "image": "/pt.jpeg",
+    "title": "Silvio Spruzzo",
+    "description": "Si è fatto pippe per anni, ha consolidato un esperienza anomala nell'allenamento. Premiato come miglior pippaiolo direttamente da Pornhub.",
+    "disciplina" : "Bodybuilding"
+  },
+  {
+    "id": 3,
+    "image": "/personal-fiero.jpg",
+    "title": "Bruno Tardi",
+    "description": "Il suo ritardo è evidente ma negli allenamenti è puntuale. ",
+    "disciplina" : "Allenamento Funzionale"
+  },
+  {
+    "id": 4,
+    "image": "/brucelee.jpg",
+    "title": "KAkapoko Kifapocomoto",
+    "description": "Direttamente dalle terre del sollevante. In grado di alterare in maniera smisurata il metabolismo del proprio cliente.",
+    "disciplina" : "Calisthenics"
+  },
+  {
+    "id": 5,
+    "image": "/pedofilo.jpg",
+    "title": "Marco Conad",
+    "description": "Nato e cresciuto in un punto Conad, Ha ottenuto una certa padronanza nel taglio del bovino adulto. Ora è pronto ad allevare tutte le vacche che gli si presentano davanti al suo cammino.  ",
+    "disciplina" : "Bodybuilding"
+  }
+]

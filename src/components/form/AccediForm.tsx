@@ -16,13 +16,15 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import GoogleSignInButton from "../GoogleSignInButton";
 
+// serve per l'azione che dovrò dare al form
+import { accedi } from "@/azioni";
 
 const FormSchema = z.object({
-  email: z.string().min(1, 'Email richiesta').email("Email non valida"),
+  email: z.string().min(1, "Email richiesta").email("Email non valida"),
   password: z
-  .string()
-  .min(1,'Password richiesta')
-  .min(8,'La password deve contenere almeno 8 caratteri'),
+    .string()
+    .min(1, "Password richiesta")
+    .min(8, "La password deve contenere almeno 8 caratteri"),
 });
 
 const AccediForm = () => {
@@ -30,22 +32,31 @@ const AccediForm = () => {
     resolver: zodResolver(FormSchema),
   });
 
-  const onSubmit = (values:z.infer<typeof FormSchema>) => {
+  const onSubmit = (values: z.infer<typeof FormSchema>) => {
     console.log(values);
   };
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        action={accedi}
+        className="w-full"
+      >
         <div className="space-y-2">
           <FormField
             control={form.control}
+            // NAME CHE SERVE PER LA RACCOLTA DATI
             name="email"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input placeholder="email@esempio.com" type="email" {...field} />
+                  <Input
+                    placeholder="email@esempio.com"
+                    type="email"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -53,6 +64,7 @@ const AccediForm = () => {
           />
           <FormField
             control={form.control}
+            // NAME CHE SERVE PER LA RACCOLTA DATI
             name="password"
             render={({ field }) => (
               <FormItem>
@@ -77,8 +89,13 @@ const AccediForm = () => {
         Oppure
       </div>
       <GoogleSignInButton>Accedi con Google</GoogleSignInButton>
-      <p className="text-center text-sm text-gray-600 mt-2">Se non hai ancora un account,
-      <Link className="text-blue-500 hover:underline" href='/iscriviti'> Registrati</Link></p>
+      <p className="text-center text-sm text-gray-600 mt-2">
+        Se non hai ancora un account,
+        <Link className="text-blue-500 hover:underline" href="/iscriviti">
+          {" "}
+          Registrati
+        </Link>
+      </p>
     </Form>
   );
 };

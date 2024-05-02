@@ -26,12 +26,11 @@ const Page = () => {
             <AccordionItem value="item-1">
               <AccordionTrigger>
                 {" "}
-                <HiOutlineMagnifyingGlassCircle size={30} /> C&#39;è qualcosa da
-                pagare?
+                <HiOutlineMagnifyingGlassCircle size={30} /> Qual&#39;è il costo del servizio
               </AccordionTrigger>
               <AccordionContent>
                 <p className="text-center text-2xl">
-                  No, il sito <span className="underline">non ha costi</span>,
+                  Il sito <span className="underline">non ha costi</span>,
                   nel momento in cui ti metterai in contatto con la persona da
                   te scelta il mio servizio si conclude.
                 </p>

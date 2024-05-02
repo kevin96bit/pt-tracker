@@ -21,11 +21,11 @@ const Page = () => {
       .then(
         () => {
           setSuccesso(true);
-          console.log("SUCCESS!");
+          console.log("SUCCESSO!");
         },
         (error) => {
           setErrore(true);
-          console.log("FAILED...", error.text);
+          console.log("ERRORE...", error.text);
         }
       );
   };
@@ -96,8 +96,8 @@ const Page = () => {
             <div className="w-[50%] flex flex-col items-center justify-center bg-gradient-to-t ">
               <div className=" px-4">
                 <p className="text-2xl">
-                  Se hai delle opinioni, sono qui per ascoltarti! Non vedo
-                  l&#39;ora di sentire cosa ne pensi🙏
+                  Se hai delle opinioni, siamo qui per ascoltarti! Non vediamo
+                  l&#39;ora di sentire cosa ne pensi.
                 </p>
               </div>
               {/* Immagine */}

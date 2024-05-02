@@ -1,5 +1,8 @@
 // import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import cards from "../components/cards.json"
+import Card from "@/components/Card";
+// import { Button } from "@/components/ui/button";
 // import { CgGym } from "react-icons/cg";
 // import Link from "next/link";
 
@@ -63,30 +66,20 @@ export default function Home() {
       {/* griglia da usare in futuro */}
       <div className="flex flex-col gap-4 items-center">
         {/* pt1 */}
-        <div className="bg-slate-300 hover:bg-blue-200  rounded-[12px] shadow-sm  p-5 w-3/4">
-          <div className="w-[10rem] bg-blue-300 h-[10em] border rounded-[12px]"></div>{" "}
-        </div>
-        {/* pt2 */}
-        <div className="bg-slate-300 hover:bg-blue-200  rounded-[12px] shadow-sm  p-5  w-3/4">
-          <div className="w-[10rem] bg-blue-300 h-[10em] border rounded-[12px]"></div>{" "}
-        </div>
-        {/* pt3 */}
-        <div className="bg-slate-300 hover:bg-blue-200  rounded-[12px] shadow-sm  p-5 w-3/4">
-          <div className="w-[10rem] bg-blue-300 h-[10em] border rounded-[12px]"></div>{" "}
-        </div>
-        {/* pt4 */}
-        <div className="bg-slate-300 hover:bg-blue-200  rounded-[12px] shadow-sm  p-5 w-3/4">
-          <div className="w-[10rem] bg-blue-300 h-[10em] border rounded-[12px]"></div>{" "}
-        </div>
-        {/* pt5 */}
-        <div className="bg-slate-300 hover:bg-blue-200  rounded-[12px] shadow-sm  p-5 w-3/4">
-          <div className="w-[10rem] bg-blue-300 h-[10em] border rounded-[12px]"></div>{" "}
-        </div>
-        {/* pt6 */}
-        <div className="bg-slate-300 hover:bg-blue-200  rounded-[12px] shadow-sm  p-5 w-3/4">
-          <div className="w-[10rem] bg-blue-300 h-[10em] border rounded-[12px]"></div>{" "}
-        </div>
+        {cards.map((card) => (
+        <Card
+          key={card.id}
+          image={card.image}
+          title={card.title}
+          description={card.description}
+          disciplina={card.disciplina}
+        />
+      ))}
+        
       </div>
+
+    
+
     </main>
   );
 }

@@ -5,9 +5,13 @@ import { Button } from "./ui/button";
 import { CiLogin } from "react-icons/ci";
 import { AiTwotoneHome } from "react-icons/ai";
 import { LuFileQuestion } from "react-icons/lu";
+import { getSession } from "@/azioni";
 // import { PiFinnTheHumanLight } from "react-icons/pi";
 
-const NavBar = () => {
+const NavBar = async () => {
+  const session = await getSession()
+
+  console.log(session)
   return (
     <div className="bg-slate-300 py-4 border-b border-s-slate-400 w-full flex items-center justify-between">
       {/* Contenitore a sinistra con il logo e i link */}
@@ -113,13 +117,25 @@ l-29 42 -3 -42 c-3 -38 -6 -43 -28 -43 l-24 0 0 130 0 130 60 0 c51 0 65 -4
       </div>
       
       {/* Contenitore a destra con il login */}
-      <div className=" mr-3">
+      
+      {/* se NON sono loggato mostrami ACCEDI */}
+      {!session.isLoggedIn && <div className=" mr-3">
         <Link href="/accedi">
           <Button className="text-2xl">
             Login <CiLogin />
           </Button>
         </Link>
-      </div>
+      </div>}
+
+      {/* se sono loggato NASCONDIMI questa sezione */}
+      {session.isLoggedIn && <div className=" mr-3">
+        <Link href="/accedi">
+          <Button className="text-2xl">
+            Login <CiLogin />
+          </Button>
+        </Link>
+      </div>}
+
     </div>
   );
 };
