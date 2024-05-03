@@ -23,30 +23,30 @@ export const getSession = async ()=>{
 }
 
 
-export const accedi = async (formData:FormData)=>{
-const session = await getSession()
-
-const formEmail = formData.get("email") as string
-const formPassword = formData.get("password") as string
-
-// IN SEGUITO INSERIRO' LA LOGICA DELLA RICERCA DEL DATABASE
-
-// NEL FRATTEMPO ESEGUO UN TEST 
-
-if(formEmail !== email){
-    return{error:"Credenziali errate"}
-}
-
-session.email = "1";
-
-await session.save()
-redirect("/")
-
-}
+export const accedi = async (formData: { email: string; password: string }) => {
+    const session = await getSession();
+  
+    const { email, password } = formData;
+  
+    // Logica di autenticazione o verifica
+    // Esempio di logica di autenticazione:
+  
+    // Se l'email e la password sono corrette
+    if (email === "kevin96imerti@outlook.it" && password === "passwordCorretta") {
+      session.email = email;
+      session.isLoggedIn=true;
+      await session.save();
+      console.log("sessione creata")
+      redirect("/");
+    } else {
+        console.log("errore")
+      return { error: "Credenziali errate" };
+    }
+  };
 
 
 export const logout = async () => {
     const session = await getSession();
     session.destroy();
-    redirect("/contatti");
+    redirect("/");
   };

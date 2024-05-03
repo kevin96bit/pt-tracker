@@ -32,15 +32,15 @@ const AccediForm = () => {
     resolver: zodResolver(FormSchema),
   });
 
-  const onSubmit = (values: z.infer<typeof FormSchema>) => {
-    console.log(values);
+  const onSubmit = async () => {
+    const values = form.getValues(); // Ottieni i valori dal form
+    await accedi(values); // Passa i valori a accedi
   };
 
   return (
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        action={accedi}
         className="w-full"
       >
         <div className="space-y-2">
