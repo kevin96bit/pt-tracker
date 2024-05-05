@@ -12,7 +12,7 @@ export const defaultSession:SessionData = {
 }
 
 export const sessionOptions: SessionOptions = {
-  password: process.env.SECRET_KEY!,
+  password: "kevinPtTracker",
   cookieName: "kevin-session",
   cookieOptions: {
     httpOnly: true,
