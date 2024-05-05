@@ -40,7 +40,7 @@ export const accedi = async (formData: { email: string; password: string }) => {
       redirect("/");
     } else {
         console.log("errore")
-      return { error: "Credenziali errate" };
+      return { error: "Credenziali non valide" };
     }
   };
 
