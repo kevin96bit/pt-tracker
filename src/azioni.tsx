@@ -5,9 +5,7 @@ import { getIronSession } from "iron-session"
 import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
 
-// creo un finto dato per eseguire il test 
-let email = "kevin96imerti@outlook.it"
-// let username = "kevin"
+
 
 export const getSession = async ()=>{
     // all'inizio la sessione è un oggetto vuoto
@@ -32,6 +30,8 @@ export const accedi = async (formData: { email: string; password: string }) => {
     // Esempio di logica di autenticazione:
   
     // Se l'email e la password sono corrette
+    
+    // TEST CON DATO FINTO
     if (email === "kevin96imerti@outlook.it" && password === "passwordCorretta") {
       session.email = email;
       session.isLoggedIn=true;
