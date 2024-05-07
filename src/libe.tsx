@@ -1,22 +1,22 @@
-// import { SessionOptions } from "iron-session";
+import { SessionOptions } from "iron-session";
 
-// export interface SessionData {
-//   email?: string;
+export interface SessionData {
+  email?: string;
 
-//   isLoggedIn: boolean;
+  isLoggedIn: boolean;
 
-// }
+}
 
-// export const defaultSession:SessionData = {
-//     isLoggedIn:false
-// }
+export const defaultSession:SessionData = {
+    isLoggedIn:false
+}
 
-// export const sessionOptions: SessionOptions = {
-//   password: process.env.SECRET_KEY!,
-//   cookieName: "kevin-session",
-//   cookieOptions: {
-//     httpOnly: true,
-//     secure: process.env.NODE_ENV === "production",
-//   },
-// };
+export const sessionOptions: SessionOptions = {
+  password: process.env.SECRET_KEY!,
+  cookieName: "kevin-session",
+  cookieOptions: {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+  },
+};
 // test

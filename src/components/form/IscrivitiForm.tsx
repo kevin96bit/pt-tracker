@@ -57,12 +57,11 @@ const FormSchema = z
         password: values.password,
       }),
     });
-    if(response.ok){
-router.push('/accedi')
-    }else{
-      console.error('La registrazione non è andata a buon fine');
+    if (response.ok) {
+      router.push("/accedi");
+    } else {
+      console.error("La registrazione non è andata a buon fine");
     }
-
   };
 
   return (
