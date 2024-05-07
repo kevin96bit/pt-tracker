@@ -15,34 +15,54 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import GoogleSignInButton from "../GoogleSignInButton";
+import { useRouter } from "next/navigation";
 
-const FormSchema = z.object({
-  username: z.string().min(1, "l'username è richiesto").max(100),
-  email: z.string().min(1, "Email richiesta").email("Email non valida"),
-  password: z
-    .string()
-    .min(1, "Password richiesta")
-    .min(8, "La password deve contenere almeno 8 caratteri"),
-  confermaPassword: z.string().min(1, "Conferma la tua password"),
-})
-.refine((data)=>data.password === data.confermaPassword, {
-  path:['confermaPassword'],
-  message:"Le password non corrispondono",
-})
+const FormSchema = z
+  .object({
+    username: z.string().min(1, "l'username è richiesto").max(100),
+    email: z.string().min(1, "Email richiesta").email("Email non valida"),
+    password: z
+      .string()
+      .min(1, "Password richiesta")
+      .min(8, "La password deve contenere almeno 8 caratteri"),
+    confermaPassword: z.string().min(1, "Conferma la tua password"),
+  })
+  .refine((data) => data.password === data.confermaPassword, {
+    path: ["confermaPassword"],
+    message: "Le password non corrispondono",
+  });
 
-const IscrivitiForm = () => {
-  const form = useForm<z.infer<typeof FormSchema>>({
+// sign up form
+  const IscrivitiForm = () => {
+  const router = useRouter();
+    const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
-    defaultValues:{
-      username:'',
-      email:'',
-      password:'',
-      confermaPassword:'',
+    defaultValues: {
+      username: "",
+      email: "",
+      password: "",
+      confermaPassword: "",
     },
   });
 
-  const onSubmit = (values: z.infer<typeof FormSchema>) => {
-    console.log(values);
+  const onSubmit = async (values: z.infer<typeof FormSchema>) => {
+    const response = await fetch("/api/user", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        username: values.username,
+        email: values.email,
+        password: values.password,
+      }),
+    });
+    if(response.ok){
+router.push('/accedi')
+    }else{
+      console.error('La registrazione non è andata a buon fine');
+    }
+
   };
 
   return (

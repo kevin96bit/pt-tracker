@@ -4,7 +4,6 @@ import { hash } from "bcrypt";
 import * as z from "zod";
 
 // definisco uno schema per la validazione dell'input
-
 const userSchema = z.object({
   username: z.string().min(1, "l'username è richiesto").max(100),
   email: z.string().min(1, "Email richiesta").email("Email non valida"),

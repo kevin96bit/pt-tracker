@@ -1,6 +1,7 @@
 "use client";
 
 import { useForm } from "react-hook-form";
+
 import {
   Form,
   FormControl,
@@ -9,15 +10,16 @@ import {
   FormLabel,
   FormMessage,
 } from "../ui/form";
+
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import GoogleSignInButton from "../GoogleSignInButton";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
-// serve per l'azione che dovrò dare al form
-import { accedi } from "@/azioni";
 
 const FormSchema = z.object({
   email: z.string().min(1, "Email richiesta").email("Email non valida"),
@@ -28,22 +30,32 @@ const FormSchema = z.object({
 });
 
 const AccediForm = () => {
-  
+
+  const router = useRouter();
+
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
+    defaultValues: {
+      email: "",
+      password: "",
+    },
   });
 
-  const onSubmit = async () => {
-    const values = form.getValues(); // Ottieni i valori dal form
-    await accedi(values); // Passa i valori a accedi
+  const onSubmit = async (values: z.infer<typeof FormSchema>) => {
+    const signInDati = await signIn("credentials", {
+      email: values.email,
+      password: values.password,
+    });
+    if(signInDati?.error){
+      console.log(signInDati.error)
+    }else{
+      router.push('/admin')
+    }
   };
 
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="w-full"
-      >
+      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
         <div className="space-y-2">
           <FormField
             control={form.control}
