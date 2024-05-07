@@ -1,13 +1,13 @@
-import { logout } from "@/azioni";
-import { Button } from "@/components/ui/button";
+// import { logout } from "@/azioni";
+// import { Button } from "@/components/ui/button";
 
-const LogoutForm = () => {
-  return (
-    <form action={logout}>
+// const LogoutForm = () => {
+//   return (
+//     <form action={logout}>
         
-      <Button>Logout </Button>
-    </form>
-  );
-};
+//       <Button>Logout </Button>
+//     </form>
+//   );
+// };
 
-export default LogoutForm;
+// export default LogoutForm;
