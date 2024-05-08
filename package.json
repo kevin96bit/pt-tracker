@@ -19,7 +19,6 @@
     "bcrypt": "^5.1.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
-    "iron-session": "^8.0.1",
     "lucide-react": "^0.370.0",
     "next": "14.2.1",
     "next-auth": "^4.24.7",
