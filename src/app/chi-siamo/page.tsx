@@ -41,7 +41,7 @@ const page = () => {
               denaro, ebbene, quello sarà il nostro compenso !
             </p>
             <br />
-            <p className="text-center text-2xl">
+            <p className="text-center text-2xl px-2">
               Ti reputiamo un amico e come tale è un piacere aiutarti.😄
             </p>
           </div>
