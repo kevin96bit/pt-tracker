@@ -5,13 +5,16 @@ import { Button } from "./ui/button";
 import { CiLogin } from "react-icons/ci";
 import { AiTwotoneHome } from "react-icons/ai";
 import { LuFileQuestion } from "react-icons/lu";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
+import { signOut } from "next-auth/react";
+import UserAccountNav from "./UserAccountNav";
 // import { getSession } from "@/azioni";
 // import { CiLogout } from "react-icons/ci";
 
-const NavBar = () => {
-  // const session = await getSession();
+const NavBar = async () => {
+  const session = await getServerSession(authOptions);
 
-  // console.log(session);
   return (
     <div className="bg-slate-300 py-4 border-b border-s-slate-400 w-full flex items-center justify-between">
       {/* Contenitore a sinistra con il logo e i link */}
@@ -113,28 +116,26 @@ l-29 42 -3 -42 c-3 -38 -6 -43 -28 -43 l-24 0 0 130 0 130 60 0 c51 0 65 -4
           <LuFileQuestion className="ml-1" size={27} />
         </div>
       </div>
-
-      {/* Contenitore a destra con il login */}
-
-      {/* Se sono loggato, mostra il pulsante di logout */}
-      {/* {session.isLoggedIn ? (
-        <div className="mr-3">
-          <Link href="/logout">
-            <Button className="text-2xl">
-              Logout <CiLogout />
-            </Button>
-          </Link>
-        </div>
-      ) : ( */}
-        {/* // altrimenti mostra il pulsante di login */}
-        <div className="mr-3">
+      <div className="mr-3">
+        {/* <Link href="/accedi">
+          <Button className="text-2xl">
+            Login <CiLogin />
+          </Button>
+        </Link> */}
+      {/* test */}
+      {session?.user ? (
+        // se è loggato distruggi la sessione attraverso un componente, cosi da non trasformare 
+        // la navbar in 'use client'
+        <UserAccountNav/>
+        ) : (
           <Link href="/accedi">
-            <Button className="text-2xl">
-              Login <CiLogin />
-            </Button>
-          </Link>
-        </div>
-      {/* )} */}
+          <Button className="text-2xl">
+            Login <CiLogin />
+          </Button>
+        </Link>
+      )}
+      </div>
+
     </div>
   );
 };

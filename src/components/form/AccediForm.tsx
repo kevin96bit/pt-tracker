@@ -1,3 +1,4 @@
+// ACCESSO UTENTE = SIGNIN
 "use client";
 
 import { useForm } from "react-hook-form";
@@ -42,13 +43,16 @@ const AccediForm = () => {
   });
 
   const onSubmit = async (values: z.infer<typeof FormSchema>) => {
-    const signInDati = await signIn("credentials", {
+    const signInDati = await signIn('credentials', {
       email: values.email,
       password: values.password,
+      redirect:false,
     });
+    
     if(signInDati?.error){
       console.log(signInDati.error)
     }else{
+      router.refresh()
       router.push('/admin')
     }
   };
@@ -69,6 +73,7 @@ const AccediForm = () => {
                     placeholder="email@esempio.com"
                     type="email"
                     {...field}
+                    autoComplete="email"
                   />
                 </FormControl>
                 <FormMessage />
@@ -87,6 +92,7 @@ const AccediForm = () => {
                     type="password"
                     placeholder="Inserisci la tua password"
                     {...field}
+                    autoComplete="password"
                   />
                 </FormControl>
                 <FormMessage />

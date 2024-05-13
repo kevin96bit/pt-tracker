@@ -1,3 +1,4 @@
+// REGISTRAZIONE UTENTE = SIGNUP
 "use client";
 
 import { useForm } from "react-hook-form";
@@ -47,7 +48,7 @@ const FormSchema = z
 
   const onSubmit = async (values: z.infer<typeof FormSchema>) => {
     const response = await fetch("/api/user", {
-      method: "POST",
+      method: 'POST',
       headers: {
         "content-type": "application/json",
       },
@@ -55,8 +56,8 @@ const FormSchema = z
         username: values.username,
         email: values.email,
         password: values.password,
-      }),
-    });
+      })
+    })
     if (response.ok) {
       router.push("/accedi");
     } else {
