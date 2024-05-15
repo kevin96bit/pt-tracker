@@ -32,7 +32,7 @@ const Page = () => {
                 <p className="text-center text-2xl">
                   Il sito <span className="underline">non ha costi</span>,
                   nel momento in cui ti metterai in contatto con la persona da
-                  te scelta il mio servizio si conclude.
+                  te scelta il nostro servizio si conclude.
                 </p>
               </AccordionContent>
             </AccordionItem>
@@ -50,7 +50,7 @@ const Page = () => {
               </AccordionTrigger>
               <AccordionContent>
                 <p className="text-center text-2xl">
-                  Al fine di evitare questi problemi, consiglio sempre di
+                  Al fine di evitare questi problemi, consigliamo sempre di
                   segnalarlo motivando il problema attraverso la pagina{" "}
                   <Link
                     href="/contatti"
@@ -80,7 +80,7 @@ const Page = () => {
                   <span className=" underline">esperienza</span> nel campo
                   dell&#39;allenamento personale e, se in possesso, una{" "}
                   <span className=" underline">certificazione</span>{" "}
-                  riconosciuta nel settore. Mi assicurerò personalmente che i
+                  riconosciuta nel settore. Ci assicureremo personalmente che i
                   personal trainer iscritti abbiano le competenze e la
                   qualificazione necessarie per offrire un servizio
                   professionale e di alta qualità.
@@ -94,7 +94,7 @@ const Page = () => {
       <p className="text-2xl py-10">
         Se la tua domanda non è tra quelle già presenti non esitare a{" "}
         <Link href="/contatti" className="text-blue-500 hover:underline">
-          contattarmi
+          contattarci.
         </Link>
       </p>
     </main>

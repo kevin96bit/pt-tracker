@@ -3,6 +3,7 @@ import { Raleway } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import { ThemeProvider } from "@/components/theme-provider"
 
 const sans = Raleway({ 
   subsets: ["latin"],
@@ -22,10 +23,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={sans.className}>
+        {/* test */}
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+        
         <NavBar />
-
         {children}
         <Footer />
+
+          </ThemeProvider>
+
       </body>
     </html>
   );

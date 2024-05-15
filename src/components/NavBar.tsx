@@ -7,10 +7,11 @@ import { AiTwotoneHome } from "react-icons/ai";
 import { LuFileQuestion } from "react-icons/lu";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-import { signOut } from "next-auth/react";
+// import { signOut } from "next-auth/react";
 import UserAccountNav from "./UserAccountNav";
-// import { getSession } from "@/azioni";
-// import { CiLogout } from "react-icons/ci";
+import { ModeToggle } from "./SwitchThemeToDark";
+
+// test darkmode
 
 const NavBar = async () => {
   const session = await getServerSession(authOptions);
@@ -116,26 +117,29 @@ l-29 42 -3 -42 c-3 -38 -6 -43 -28 -43 l-24 0 0 130 0 130 60 0 c51 0 65 -4
           <LuFileQuestion className="ml-1" size={27} />
         </div>
       </div>
-      <div className="mr-3">
-        {/* <Link href="/accedi">
-          <Button className="text-2xl">
-            Login <CiLogin />
-          </Button>
-        </Link> */}
-      {/* test */}
-      {session?.user ? (
-        // se è loggato distruggi la sessione attraverso un componente, cosi da non trasformare 
-        // la navbar in 'use client'
-        <UserAccountNav/>
+
+      {/* componente switch */}
+      
+      <div className="mr-3 flex gap-3">
+        {/* switch component */}
+        <div>
+        <ModeToggle />
+      </div>
+        <div>
+        {session?.user ? (
+          // se è loggato distruggi la sessione attraverso un componente, cosi da non trasformare
+          // la navbar in 'use client'
+          <UserAccountNav />
         ) : (
           <Link href="/accedi">
-          <Button className="text-2xl">
-            Login <CiLogin />
-          </Button>
-        </Link>
-      )}
+            <Button className="text-2xl">
+              Login <CiLogin />
+            </Button>
+          </Link>
+        )}
+        </div>
+        
       </div>
-
     </div>
   );
 };

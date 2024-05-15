@@ -1,19 +1,37 @@
-// import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import cards from "../components/cards.json"
-import Card from "@/components/Card";
-// import { Button } from "@/components/ui/button";
-// import { CgGym } from "react-icons/cg";
-// import Link from "next/link";
+'use client'
 
-export default function Home() {
+import Image from "next/image";
+import cards from "../components/cards.json";
+import Card from "@/components/Card";
+import { useState } from "react";
+
+// Interfaccia per il funzionamento del select 
+interface CardData {
+  id: number;
+  image: string;
+  title: string;
+  description: string;
+  disciplina: string;
+}
+
+const Home: React.FC = () => {
+  const [selectedDisciplina, setSelectedDisciplina] = useState<string>('');
+
+  const handleDisciplinaChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedDisciplina(event.target.value);
+  };
+
+  const filteredCards: CardData[] = selectedDisciplina !== 'tutto'
+  ? cards.filter(card => card.disciplina === selectedDisciplina)
+  : cards;
+
   return (
-    <main className="flex min-h-screen flex-col p-5  ">
-      {/* contenitore che racchiude gli input e select */}
+    <main className="flex min-h-screen flex-col p-5">
+      {/* Contenitore che racchiude gli input e select */}
       <div className="w-full flex justify-center">
-        {/* select per la categoria */}
+        {/* Select per la categoria */}
         <div className="w-56 p-2 rounded-md border flex ml-4">
-          <div className=" w-10 flex justify-center">
+          <div className="w-10 flex justify-center">
             <Image
               src="https://assets.subito.it/static/icons/cactus/category-squares.svg"
               alt="iconaCategorie"
@@ -21,18 +39,23 @@ export default function Home() {
               height="24"
             />
           </div>
-          <select className="r w-full outline-none">
-            <option value="">Seleziona uno sport</option>
-            <option value="sport1">Bodybuilding</option>
-            <option value="sport2">Calisthenics</option>
-            <option value="sport3">Powerlifting</option>
-            <option value="sport3">CrossFit</option>
-            <option value="sport3">Funzionale</option>
+          <select
+            className="r w-full outline-none"
+            value={selectedDisciplina}
+            onChange={handleDisciplinaChange}
+          >
+            <option disabled value="">Seleziona uno sport</option>
+            <option value="Bodybuilding">Bodybuilding</option>
+            <option value="Calisthenics">Calisthenics</option>
+            <option value="Powerlifting">Powerlifting</option>
+            <option value="CrossFit">CrossFit</option>
+            <option value="Funzionale">Funzionale</option>
+            <option value="tutto">Mostra tutto</option>
           </select>
         </div>
-        {/* input per la posizione */}
+        {/* Input per la posizione */}
         <div className="w-56 p-2 rounded-md border flex ml-4">
-          <div className=" w-10 flex justify-center">
+          <div className="w-10 flex justify-center">
             <svg
               role="img"
               aria-hidden="true"
@@ -61,25 +84,23 @@ export default function Home() {
           ></input>
         </div>
       </div>
+
+      {/* Griglia dei card filtrati */}
       <div className="w-full p-[1px] bg-blue-200 my-5"></div>
 
-      {/* griglia da usare in futuro */}
       <div className="flex flex-col gap-4 items-center">
-        {/* pt1 */}
-        {cards.map((card) => (
-        <Card
-          key={card.id}
-          image={card.image}
-          title={card.title}
-          description={card.description}
-          disciplina={card.disciplina}
-        />
-      ))}
-        
+        {filteredCards.map(card => (
+          <Card
+            key={card.id}
+            image={card.image}
+            title={card.title}
+            description={card.description}
+            disciplina={card.disciplina}
+          />
+        ))}
       </div>
-
-    
-
     </main>
   );
-}
+};
+
+export default Home;

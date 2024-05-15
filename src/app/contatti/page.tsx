@@ -48,7 +48,7 @@ const Page = () => {
               <p className="text-4xl font-extrabold mt-3">
                 Per maggiori informazioni
               </p>
-              <p className="text-4xl font-extrabold mt-3">contattami !</p>
+              <p className="text-4xl font-extrabold mt-3">contattaci !</p>
               <div className="mx-auto w-2/4 p-[1px] bg-blue-400 my-6"></div>
               {/* Form */}
               <div className="w-full p-4">
