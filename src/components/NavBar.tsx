@@ -10,6 +10,7 @@ import { authOptions } from "@/lib/auth";
 // import { signOut } from "next-auth/react";
 import UserAccountNav from "./UserAccountNav";
 import { ModeToggle } from "./SwitchThemeToDark";
+import DefaultSwitchITEN from "./ui/DefaultSwitchITEN";
 
 // test darkmode
 
@@ -121,6 +122,10 @@ l-29 42 -3 -42 c-3 -38 -6 -43 -28 -43 l-24 0 0 130 0 130 60 0 c51 0 65 -4
       {/* componente switch */}
       
       <div className="mr-3 flex gap-3">
+        {/* switch it to en */}
+        <div className="flex items-center">
+          <DefaultSwitchITEN/>
+        </div>
         {/* switch component */}
         <div>
         <ModeToggle />
