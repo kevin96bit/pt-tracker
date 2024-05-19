@@ -1,0 +1,45 @@
+
+  {
+    "home": "Home",
+    "about_us": "About Us",
+    "contacts": "Contacts",
+    "faq": "FAQ",
+    
+    
+    "title": "About Us",
+    "mission_title": "Our mission",
+    "thoughts": "Have you ever thought:",
+    "thought_1": "\"I would like to train in 'x' but there's not much in my area\".",
+    "thought_2": "Or:",
+    "thought_3": "\"Nice sport! Too bad I don't know anyone willing to teach me\".",
+    "thought_4": "Or even worse:",
+    "thought_5": "\"I don't know who to trust, the internet is confusing\".",
+    "help_title": "And here we are, ready to help you",
+    "why_title": "Why this site?",
+    "why_description": "We will help you get in touch with professionals, all completely free of charge. We'll be your intermediary, nothing more. Helping people achieve their goals is worth more than money, well, that will be our reward!",
+    "friendly_note": "We consider you a friend and as such it is a pleasure to help you.",
+    "playlist_note": "We also leave you attached to our playlist with selected tracks on spotify, maybe you like it",
+    "link_text": "🔥CLICK HERE🔥",
+
+    "main_title": "For more information",
+    "subtitle": "contact us!",
+    "name_placeholder": "Name",
+    "email_placeholder": "Email",
+    "message_placeholder": "Message",
+    "send_message_button": "Send message",
+    "error_message": "Error",
+    "success_message": "Email sent successfully",
+    "opinions_text": "If you have opinions, we are here to listen! We can't wait to hear what you think.",
+    "image_alt": "About us image",
+
+    
+      "question1": "What is the cost of the service?",
+      "answer1": "The site has no costs, once you get in touch with the person you choose, our service ends.",
+      "question2": "I'm having issues with my personal trainer, what should I do?",
+      "answer2": "To avoid these issues, we always recommend reporting it by explaining the problem through the Contacts page.",
+      "question3": "What criteria are used to select personal trainers?",
+      "answer3": "Every personal trainer on the site is required to have experience in personal training and, if applicable, a recognized certification in the field. We will personally ensure that registered personal trainers have the necessary skills and qualifications to offer a professional and high-quality service."
+    
+    
+  }
+  

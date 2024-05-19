@@ -1,0 +1,30 @@
+[
+  {
+    "id": 2,
+    "image": "/pt.jpeg",
+    "title": "Personal Trainer 1",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem adipisci, esse quod beatae excepturi odio eos. Ratione adipisci quae maiores",
+    "disciplina" : "Bodybuilding"
+  },
+  {
+    "id": 3,
+    "image": "/personal-fiero.jpg",
+    "title": "Personal Trainer 2",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem adipisci. ",
+    "disciplina" : "Funzionale"
+  },
+  {
+    "id": 4,
+    "image": "/brucelee.jpg",
+    "title": "Personal Trainer 3",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem adipisci, esse quod beatae excepturi odio eos.",
+    "disciplina" : "Calisthenics"
+  },
+  {
+    "id": 5,
+    "image": "/pedofilo.jpg",
+    "title": "Personal Trainer 4",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem adipisci, esse quod beatae excepturi odio eos.  ",
+    "disciplina" : "Bodybuilding"
+  }
+]

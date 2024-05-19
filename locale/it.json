@@ -1,0 +1,42 @@
+{
+  
+    "home": "Home",
+    "about_us": "Chi siamo",
+    "contacts": "Contatti",
+    "faq": "FAQ",
+    
+  
+  "title": "Chi siamo",
+  "mission_title": "La nostra missione",
+  "thoughts": "Vi è mai capitato di pensare:",
+  "thought_1": "\"Vorrei allenarmi in 'x' ma nella mia zona non c'è granchè\".",
+  "thought_2": "Oppure:",
+  "thought_3": "\"Bello questo sport! Peccato che non conosca nessuno disposto a insegnarmelo\".",
+  "thought_4": "O peggio ancora:",
+  "thought_5": "\"Non so a chi affidarmi, in rete non si capisce niente\".",
+  "help_title": "Ed eccoci qui, pronti ad aiutarti",
+  "why_title": "Perchè proprio questo sito ?",
+  "why_description": "Ti aiutereremo a metterti in contatto con professionisti, il tutto in modo completamente gratuito. Saremo il tuo tramite, niente di più. Aiutare le persone a realizzarsi è qualcosa che vale più del denaro, ebbene, quello sarà il nostro compenso !",
+  "friendly_note": "Ti reputiamo un amico e come tale è un piacere aiutarti.",
+  "playlist_note": "Ti lasciamo in allegato anche la nostra playlist con tracce selezionate su spotify, magari ti piace",
+  "link_text": "🔥CLICCA QUI🔥",
+
+  "main_title": "Per maggiori informazioni",
+    "subtitle": "contattaci!",
+    "name_placeholder": "Nome",
+    "email_placeholder": "Email",
+    "message_placeholder": "Messaggio",
+    "send_message_button": "Invia messaggio",
+    "error_message": "Errore",
+    "success_message": "Email inviata con successo",
+    "opinions_text": "Se hai delle opinioni, siamo qui per ascoltarti! Non vediamo l'ora di sentire cosa ne pensi.",
+    "image_alt": "Chi siamo immagine",
+
+    "question1": "Qual'è il costo del servizio?",
+    "answer1": "Il sito non ha costi, nel momento in cui ti metterai in contatto con la persona da te scelta il nostro servizio si conclude.",
+    "question2": "Ho problemi con il mio personal trainer, cosa devo fare?",
+    "answer2": "Al fine di evitare questi problemi, consigliamo sempre di segnalarlo motivando il problema attraverso la pagina Contatti.",
+    "question3": "Quali sono i criteri utilizzati per selezionare i personal trainer?",
+    "answer3": "Ogni personal trainer presente sul sito è tenuto a possedere esperienza nel campo dell'allenamento personale e, se in possesso, una certificazione riconosciuta nel settore. Ci assicureremo personalmente che i personal trainer iscritti abbiano le competenze e la qualificazione necessarie per offrire un servizio professionale e di alta qualità."
+  
+}
