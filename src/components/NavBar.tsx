@@ -12,9 +12,13 @@ import UserAccountNav from "./UserAccountNav";
 import { ModeToggle } from "./SwitchThemeToDark";
 import DefaultSwitchITEN from "./ui/DefaultSwitchITEN";
 
-// test darkmode
+// DA RIVEDERE
+import { useLanguages } from '../context/LanguageContext';
+import { translate } from '../../utils/translations';
 
 const NavBar = async () => {
+  
+
   const session = await getServerSession(authOptions);
 
   return (

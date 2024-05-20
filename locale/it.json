@@ -1,7 +1,5 @@
 {
-  
-    "home": "Home",
-    "about_us": "Chi siamo",
+    "aboutUs": "Chi siamo",
     "contacts": "Contatti",
     "faq": "FAQ",
     
@@ -45,5 +43,13 @@
     "question3": "Quali sono i criteri utilizzati per selezionare i personal trainer?",
     "answer3": "Ogni personal trainer presente sul sito è tenuto a possedere esperienza nel campo dell'allenamento personale e, se in possesso, una certificazione riconosciuta nel settore. Ci assicureremo personalmente che i personal trainer iscritti abbiano le competenze e la qualificazione necessarie per offrire un servizio professionale e di alta qualità.",
     "help":"Se la tua domanda non è tra quelle già presenti non esitare a ",
-    "helpContact":"contattarci"
+    "helpContact":"contattarci",
+
+    "placeholderPw":"email@esempio.com",
+      "logInForm1":"Inserisci la tua password",
+      "logIn":"Accedi",
+      "Or":"Oppure",
+      "logInGoogle":"Accedi con Google",
+      "inviteToSub":"Se non hai ancora un account, ",
+      "linkSub":"Registrati"
 }

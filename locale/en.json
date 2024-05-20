@@ -1,7 +1,6 @@
 
   {
-    "home": "Home",
-    "about_us": "About Us",
+    "aboutUs": "About Us",
     "contacts": "Contacts",
     "faq": "FAQ",
     
@@ -46,7 +45,14 @@
       "question3": "What criteria are used to select personal trainers?",
       "answer3": "Every personal trainer on the site is required to have experience in personal training and, if applicable, a recognized certification in the field. We will personally ensure that registered personal trainers have the necessary skills and qualifications to offer a professional and high-quality service.",
       "help":"If your question is not among those already present, do not hesitate to ",
-      "helpContact":"contact us"
-    
+      "helpContact":"contact us",
+
+      "placeholderPw":"email@example.com",
+      "logInForm1":"Enter your password",
+      "logIn":"Login",
+      "Or":"Or",
+      "logInGoogle":"log in with Google",
+      "inviteToSub":"If you do not have an account, ",
+      "linkSub":"Sign up"
   }
   
