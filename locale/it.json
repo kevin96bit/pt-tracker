@@ -5,6 +5,10 @@
     "contacts": "Contatti",
     "faq": "FAQ",
     
+    "select":"Seleziona uno sport",
+    "showAll":"Mostra tutto",
+    "functionalTraining":"Funzionale",
+    "placeHolderTracker":"Dove ti trovi ?",
   
   "title": "Chi siamo",
   "mission_title": "La nostra missione",
@@ -32,11 +36,14 @@
     "opinions_text": "Se hai delle opinioni, siamo qui per ascoltarti! Non vediamo l'ora di sentire cosa ne pensi.",
     "image_alt": "Chi siamo immagine",
 
+    "faqTitle":"Domande frequenti",
     "question1": "Qual'è il costo del servizio?",
     "answer1": "Il sito non ha costi, nel momento in cui ti metterai in contatto con la persona da te scelta il nostro servizio si conclude.",
     "question2": "Ho problemi con il mio personal trainer, cosa devo fare?",
-    "answer2": "Al fine di evitare questi problemi, consigliamo sempre di segnalarlo motivando il problema attraverso la pagina Contatti.",
+    "answer2": "Al fine di evitare questi problemi, consigliamo sempre di segnalarlo motivando il problema attraverso la pagina ",
+    "linkContact":"Contatti.",
     "question3": "Quali sono i criteri utilizzati per selezionare i personal trainer?",
-    "answer3": "Ogni personal trainer presente sul sito è tenuto a possedere esperienza nel campo dell'allenamento personale e, se in possesso, una certificazione riconosciuta nel settore. Ci assicureremo personalmente che i personal trainer iscritti abbiano le competenze e la qualificazione necessarie per offrire un servizio professionale e di alta qualità."
-  
+    "answer3": "Ogni personal trainer presente sul sito è tenuto a possedere esperienza nel campo dell'allenamento personale e, se in possesso, una certificazione riconosciuta nel settore. Ci assicureremo personalmente che i personal trainer iscritti abbiano le competenze e la qualificazione necessarie per offrire un servizio professionale e di alta qualità.",
+    "help":"Se la tua domanda non è tra quelle già presenti non esitare a ",
+    "helpContact":"contattarci"
 }

@@ -4,6 +4,8 @@ import Image from "next/image";
 import cards from "../components/cards.json";
 import Card from "@/components/Card";
 import { useState } from "react";
+import { useLanguages } from '../context/LanguageContext';
+import { translate } from '../../utils/translations';
 
 // Interfaccia per il funzionamento del select 
 interface CardData {
@@ -15,6 +17,9 @@ interface CardData {
 }
 
 const Home: React.FC = () => {
+  const { language } = useLanguages();
+
+
   const [selectedDisciplina, setSelectedDisciplina] = useState<string>('');
 
   const handleDisciplinaChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -44,13 +49,13 @@ const Home: React.FC = () => {
             value={selectedDisciplina}
             onChange={handleDisciplinaChange}
           >
-            <option disabled value="">Seleziona uno sport</option>
+            <option disabled value="">{translate("select",language)}</option>
             <option value="Bodybuilding">Bodybuilding</option>
             <option value="Calisthenics">Calisthenics</option>
             <option value="Powerlifting">Powerlifting</option>
             <option value="CrossFit">CrossFit</option>
-            <option value="Funzionale">Funzionale</option>
-            <option value="tutto">Mostra tutto</option>
+            <option value="Funzionale">{translate("functionalTraining",language)}</option>
+            <option value="tutto">{translate("showAll",language)}</option>
           </select>
         </div>
         {/* Input per la posizione */}
@@ -80,7 +85,7 @@ const Home: React.FC = () => {
           <input
             type="search"
             className="r w-full outline-none"
-            placeholder="Dove ti trovi?"
+            placeholder={translate('placeHolderTracker',language)}
           ></input>
         </div>
       </div>

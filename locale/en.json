@@ -5,7 +5,11 @@
     "contacts": "Contacts",
     "faq": "FAQ",
     
-    
+    "select":"Select a sport",
+    "showAll":"Show all",
+    "functionalTraining":"Functional training",
+    "placeHolderTracker":"Where are you ?",
+
     "title": "About Us",
     "mission_title": "Our mission",
     "thoughts": "Have you ever thought:",
@@ -33,13 +37,16 @@
     "image_alt": "About us image",
 
     
+      "faqTitle":"Frequently Asked Questions",
       "question1": "What is the cost of the service?",
       "answer1": "The site has no costs, once you get in touch with the person you choose, our service ends.",
       "question2": "I'm having issues with my personal trainer, what should I do?",
-      "answer2": "To avoid these issues, we always recommend reporting it by explaining the problem through the Contacts page.",
+      "answer2": "To avoid these issues, we always recommend reporting it by explaining the problem through the ",
+      "linkContact":"Contact page.",
       "question3": "What criteria are used to select personal trainers?",
-      "answer3": "Every personal trainer on the site is required to have experience in personal training and, if applicable, a recognized certification in the field. We will personally ensure that registered personal trainers have the necessary skills and qualifications to offer a professional and high-quality service."
-    
+      "answer3": "Every personal trainer on the site is required to have experience in personal training and, if applicable, a recognized certification in the field. We will personally ensure that registered personal trainers have the necessary skills and qualifications to offer a professional and high-quality service.",
+      "help":"If your question is not among those already present, do not hesitate to ",
+      "helpContact":"contact us"
     
   }
   
