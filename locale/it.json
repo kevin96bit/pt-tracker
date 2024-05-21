@@ -51,5 +51,20 @@
       "Or":"Oppure",
       "logInGoogle":"Accedi con Google",
       "inviteToSub":"Se non hai ancora un account, ",
-      "linkSub":"Registrati"
+      "linkSub":"Registrati",
+
+      "username":"Username",
+      "placeholderUser":"Inserisci username",
+      "emailSu":"Email",
+      "PlaceHolderEmailSu":"email@esempio.com",
+      "pwSu":"Password",
+      "placeHolderPwSu":"Inserisci una password",
+      "repeatPw":"Ripeti password",
+      "placeHolderRepeatPw":"Ripeti password",
+      "signUp":"Iscriviti",
+      "orSu":"Oppure",
+      "subByGoogle":"iscriviti con Google",
+      "inviteToLogIn":"Se hai già un account, ",
+      "linkLog":"Accedi"
+     
 }

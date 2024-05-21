@@ -53,6 +53,20 @@
       "Or":"Or",
       "logInGoogle":"log in with Google",
       "inviteToSub":"If you do not have an account, ",
-      "linkSub":"Sign up"
+      "linkSub":"Sign up",
+
+      "username":"Username",
+      "placeholderUser":"Enter username",
+      "emailSu":"Email",
+      "PlaceHolderEmailSu":"email@example.com",
+      "pwSu":"Password",
+      "placeHolderPwSu":"Enter a password",
+      "repeatPw":"Repeat password",
+      "placeHolderRepeatPw":"Repeat password",
+      "signUp":"Sign Up",
+      "orSu":"Or",
+      "subByGoogle":"Sign Up with Google",
+      "inviteToLogIn":"If you already have an account, ",
+      "linkLog":"Login"
   }
   
