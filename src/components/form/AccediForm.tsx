@@ -21,6 +21,8 @@ import GoogleSignInButton from "../GoogleSignInButton";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
+import { useLanguages } from '../../context/LanguageContext';
+import { translate } from '../../../utils/translations';
 
 const FormSchema = z.object({
   email: z.string().min(1, "Email richiesta").email("Email non valida"),
@@ -31,6 +33,9 @@ const FormSchema = z.object({
 });
 
 const AccediForm = () => {
+
+  const { language } = useLanguages();
+
 
   const router = useRouter();
 
@@ -70,7 +75,7 @@ const AccediForm = () => {
                 <FormLabel>Email</FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="email@esempio.com"
+                    placeholder={translate('placeholderPw',language)}
                     type="email"
                     {...field}
                     autoComplete="email"
@@ -90,7 +95,7 @@ const AccediForm = () => {
                 <FormControl>
                   <Input
                     type="password"
-                    placeholder="Inserisci la tua password"
+                    placeholder={translate('logInForm1',language)}
                     {...field}
                     autoComplete="password"
                   />
@@ -101,18 +106,18 @@ const AccediForm = () => {
           />
         </div>
         <Button className="w-full mt-6 " type="submit">
-          Accedi
+          {translate('logIn',language)}
         </Button>
       </form>
       <div className="mx-auto my-4 flex w-full items-center justify-evenly before:mr-4 before:block before:h-px before:flex-grow before:bg-stone-400 after:ml-4 after:block after:h-px after:flex-grow after:bg-stone-400">
-        Oppure
+        {translate('Or',language)}
       </div>
-      <GoogleSignInButton>Accedi con Google</GoogleSignInButton>
+      <GoogleSignInButton>{translate('logInGoogle',language)}</GoogleSignInButton>
       <p className="text-center text-sm text-gray-600 mt-2">
-        Se non hai ancora un account,
+        {translate("inviteToSub",language)}
         <Link className="text-blue-500 hover:underline" href="/iscriviti">
           {" "}
-          Registrati
+          {translate("linkSub",language)}
         </Link>
       </p>
     </Form>

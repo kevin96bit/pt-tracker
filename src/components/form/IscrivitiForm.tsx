@@ -18,6 +18,9 @@ import Link from "next/link";
 import GoogleSignInButton from "../GoogleSignInButton";
 import { useRouter } from "next/navigation";
 
+import { useLanguages } from '../../context/LanguageContext';
+import { translate } from '../../../utils/translations';
+
 const FormSchema = z
   .object({
     username: z.string().min(1, "l'username è richiesto").max(100),
@@ -35,6 +38,10 @@ const FormSchema = z
 
 // sign up form
   const IscrivitiForm = () => {
+
+    const { language } = useLanguages();
+
+
   const router = useRouter();
     const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
@@ -76,7 +83,7 @@ const FormSchema = z
               <FormItem>
                 <FormLabel>Username</FormLabel>
                 <FormControl>
-                  <Input placeholder="Inserisci username" {...field} />
+                  <Input placeholder={translate('placeholderUser',language)} {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -90,7 +97,7 @@ const FormSchema = z
                 <FormLabel>Email</FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="email@esempio.com"
+                    placeholder={translate("PlaceHolderEmailSu",language)}
                     type="email"
                     {...field}
                   />
@@ -108,7 +115,7 @@ const FormSchema = z
                 <FormControl>
                   <Input
                     type="password"
-                    placeholder="Inserisci la tua password"
+                    placeholder={translate('placeHolderPwSu',language)}
                     {...field}
                   />
                 </FormControl>
@@ -121,11 +128,11 @@ const FormSchema = z
             name="confermaPassword"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Ripeti Password</FormLabel>
+                <FormLabel>{translate('repeatPw',language)}</FormLabel>
                 <FormControl>
                   <Input
                     type="password"
-                    placeholder="Ripeti Password"
+                    placeholder={translate('placeHolderRepeatPw',language)}
                     {...field}
                   />
                 </FormControl>
@@ -135,18 +142,18 @@ const FormSchema = z
           />
         </div>
         <Button className="w-full mt-6 " type="submit">
-          Iscriviti
+          {translate('signUp',language)}
         </Button>
       </form>
       <div className="mx-auto my-4 flex w-full items-center justify-evenly before:mr-4 before:block before:h-px before:flex-grow before:bg-stone-400 after:ml-4 after:block after:h-px after:flex-grow after:bg-stone-400">
-        Oppure
+       {translate('orSu',language)}
       </div>
-      <GoogleSignInButton>Iscriviti con Google</GoogleSignInButton>
+      <GoogleSignInButton> {translate('subByGoogle',language)} </GoogleSignInButton>
       <p className="text-center text-sm text-gray-600 mt-2">
-        Se hai già un account,
+        {translate('inviteToLogIn',language)}
         <Link className="text-blue-500 hover:underline" href="/accedi">
           {" "}
-          Accedi
+          {translate('linkLog',language)}
         </Link>
       </p>
     </Form>

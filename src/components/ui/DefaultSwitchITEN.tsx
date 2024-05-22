@@ -1,12 +1,15 @@
 'use client'
 import { useState } from 'react';
 import Image from 'next/image';
+import { useLanguages } from '../../context/LanguageContext';
 
 const DefaultSwitchITEN = () => {
   const [isChecked, setIsChecked] = useState(false);
+  const { setLanguage } = useLanguages();
 
   const handleInputChange = () => {
     setIsChecked(!isChecked);
+    setLanguage(isChecked ? 'it' : 'en');
   };
 
   return (
@@ -22,7 +25,8 @@ const DefaultSwitchITEN = () => {
   )
 }
 
-export default DefaultSwitchITEN
+export default DefaultSwitchITEN;
+
 
 
   

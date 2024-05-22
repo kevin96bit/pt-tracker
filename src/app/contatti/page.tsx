@@ -3,14 +3,17 @@
 import Image from "next/image";
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-
+import { useLanguages } from '../../context/LanguageContext';
+import { translate } from '../../../utils/translations';
 
 const Page = () => {
+  const { language } = useLanguages();
+
   const formRef = useRef<HTMLFormElement>(null);
   const [errore, setErrore] = useState<boolean>(false);
   const [successo, setSuccesso] = useState<boolean>(false);
 
-  // Funzione per inviare l'email
+  // Function to send email
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -21,15 +24,14 @@ const Page = () => {
       .then(
         () => {
           setSuccesso(true);
-          console.log("SUCCESSO!");
+          console.log("SUCCESS!");
         },
         (error) => {
           setErrore(true);
-          console.log("ERRORE...", error.text);
+          console.log("ERROR...", error.text);
         }
       );
   };
-
 
   return (
     <section className="min-h-screen flex items-center justify-center">
@@ -46,9 +48,11 @@ const Page = () => {
           <div className="flex w-full">
             <div className="w-[50%] pl-2">
               <p className="text-4xl font-extrabold mt-3">
-                Per maggiori informazioni
+                {translate('main_title', language)}
               </p>
-              <p className="text-4xl font-extrabold mt-3">contattaci !</p>
+              <p className="text-4xl font-extrabold mt-3">
+                {translate( 'subtitle', language)}
+              </p>
               <div className="mx-auto w-2/4 p-[1px] bg-blue-400 my-6"></div>
               {/* Form */}
               <div className="w-full p-4">
@@ -59,53 +63,53 @@ const Page = () => {
                 >
                   <input
                     type="text"
-                    placeholder="Nome"
+                    placeholder={translate( 'name_placeholder', language)}
                     name="name"
                     className="border border-blue-300 rounded px-4 py-2 outline-none"
                   />
                   <input
                     type="email"
-                    placeholder="Email"
+                    placeholder={translate( 'email_placeholder', language)}
                     name="email"
                     className="border border-blue-300 rounded px-4 py-2 outline-none"
                   />
                   <textarea
                     rows={8}
-                    placeholder="Messaggio"
+                    placeholder={translate( 'message_placeholder', language)}
                     name="message"
                     className="border border-blue-300 rounded px-4 py-2 outline-none"
                   ></textarea>
                   <button className="bg-blue-500 text-white font-semibold px-4 py-2 rounded hover:bg-blue-600">
-                    Invia messaggio
+                    {translate( 'send_message_button', language)}
                   </button>
-                  {/* Utilizza flex e items-center per centrare le span orizzontalmente */}
                   <div className="pt-1 mx-auto flex items-center">
                     {errore && (
-                      <span className="text-red-500">&quot;Errore&quot;</span>
+                      <span className="text-red-500">
+                        {translate( 'error_message', language)}
+                      </span>
                     )}
                     {successo && (
                       <span className="text-blue-500">
-                        &quot;Email inviata con successo&quot;
+                        {translate( 'success_message', language)}
                       </span>
                     )}
                   </div>
                 </form>
               </div>
-              {/* Fine form */}
+              {/* End form */}
             </div>
             <div className="w-[50%] flex flex-col items-center justify-center bg-gradient-to-t ">
               <div className=" px-4">
                 <p className="text-2xl">
-                  Se hai delle opinioni, siamo qui per ascoltarti! Non vediamo
-                  l&#39;ora di sentire cosa ne pensi.
+                  {translate( 'opinions_text', language)}
                 </p>
               </div>
-              {/* Immagine */}
+              {/* Image */}
               <Image
                 src="/personeCheparlano-removebg-preview.png"
                 width={500}
                 height={500}
-                alt="Chi siamo immagine"
+                alt={translate( 'image_alt', language)}
                 className=" w-full h-[70%] rounded-md"
               />
             </div>

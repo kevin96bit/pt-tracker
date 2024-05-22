@@ -3,12 +3,13 @@ import { Raleway } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "@/components/theme-provider";
+import { LanguageProvider } from "../context/LanguageContext";
 
-const sans = Raleway({ 
+const sans = Raleway({
   subsets: ["latin"],
-  weight:['500'],
- });
+  weight: ["500"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,20 +24,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={sans.className}>
-        {/* test */}
         <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-        
-        <NavBar />
-        {children}
-        <Footer />
-
-          </ThemeProvider>
-
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <LanguageProvider>
+            <NavBar />
+            {children}
+            <Footer />
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
