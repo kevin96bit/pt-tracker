@@ -4,6 +4,10 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { db } from "./db";
 import { compare } from "bcrypt";
 
+// Log di verifica per le variabili d'ambiente
+// console.log('NEXTAUTH_SECRET:', process.env.NEXTAUTH_SECRET);
+// console.log('NEXTAUTH_URL:', process.env.NEXTAUTH_URL);
+
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(db),
   secret: process.env.NEXTAUTH_SECRET,
@@ -47,6 +51,7 @@ export const authOptions: NextAuthOptions = {
           return null;
         }
         return {
+          // questo id fa il return di un numero per questo motivo ho messo le backtick
           id: `${utenteEsistente.id}`,
           username: utenteEsistente.username,
           email: utenteEsistente.email,
@@ -74,4 +79,5 @@ export const authOptions: NextAuthOptions = {
       };
     },
   },
+// debug:true,
 };
