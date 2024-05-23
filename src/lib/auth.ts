@@ -3,6 +3,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { db } from "./db";
 import { compare } from "bcrypt";
+import GoogleProvider from "next-auth/providers/google";
 
 // Log di verifica per le variabili d'ambiente
 // console.log('NEXTAUTH_SECRET:', process.env.NEXTAUTH_SECRET);
@@ -20,6 +21,10 @@ export const authOptions: NextAuthOptions = {
     signIn: "/accedi",
   },
   providers: [
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID!,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET!
+    }),
     CredentialsProvider({
       name: "credentials",
       credentials: {
@@ -43,13 +48,17 @@ export const authOptions: NextAuthOptions = {
           return null;
         }
 
-        const passwordConfronto = await compare(
-          credentials.password,
-          utenteEsistente.password
-        );
-        if (!passwordConfronto) {
-          return null;
+        if(utenteEsistente.password){
+
+          const passwordConfronto = await compare(
+            credentials.password,
+            utenteEsistente.password
+          );
+          if (!passwordConfronto) {
+            return null;
+          }
         }
+        
         return {
           // questo id fa il return di un numero per questo motivo ho messo le backtick
           id: `${utenteEsistente.id}`,
