@@ -1,14 +1,27 @@
-import { authOptions } from "@/lib/auth" 
-import { getServerSession } from "next-auth"
+import { authOptions } from "@/lib/auth";
+import { getServerSession } from "next-auth";
+import AdminMenu from "@/components/menuAdmin/AdminMenu"; 
 
-const page = async () => {
+
+const Page = async () => {
   const session = await getServerSession(authOptions);
-  if(session?.user){
-    return <h2 className="text-2xl"> admin page - welcome back {session?.user.username || session.user.name } </h2>
+  // Se l'utente è verificato, allora fai il return della admin page o area personale
+  if (session?.user) {
+    return (
+      <main className="flex min-h-screen flex-col p-5 gap-3">
+        <div className="bg-slate-500 p-5 rounded-sm">
+          <h2 className="text-2xl">
+            Admin page - welcome back {session?.user.username || session.user.name}
+          </h2>
+        </div>
+        <div>
+          <AdminMenu />
+        </div>
+      </main>
+    );
   }
- return (
-  <h2 className="text-2xl">per favore loggati per vedere questa pagina</h2>
- )
-}
+  // Altrimenti mostra questo messaggio
+  return <h2 className="text-2xl">Per favore loggati per vedere questa pagina</h2>;
+};
 
-export default page
+export default Page;

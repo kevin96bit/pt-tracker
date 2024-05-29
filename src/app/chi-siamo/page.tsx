@@ -5,11 +5,14 @@ import Link from "next/link";
 import { useLanguages } from '../../context/LanguageContext';
 import { translate } from '../../../utils/translations';
 
+
+
 const Page = () => {
   const { language } = useLanguages();
 
   return (
     <section className="flex items-center justify-center">
+      
       <div className=" w-3/4  flex flex-col min-h-screen items-center">
         <p className=" mt-3 text-4xl font-semibold">{translate('mission_title', language)} 🚀</p>
         <br />

@@ -5,9 +5,6 @@ import { db } from "./db";
 import { compare } from "bcrypt";
 import GoogleProvider from "next-auth/providers/google";
 
-// Log di verifica per le variabili d'ambiente
-// console.log('NEXTAUTH_SECRET:', process.env.NEXTAUTH_SECRET);
-// console.log('NEXTAUTH_URL:', process.env.NEXTAUTH_URL);
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(db),

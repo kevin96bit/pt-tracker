@@ -1,25 +1,22 @@
+
 import Link from "next/link";
 import { GrContact } from "react-icons/gr";
 import { FaPeopleGroup } from "react-icons/fa6";
-import { Button } from "./ui/button";
-import { CiLogin } from "react-icons/ci";
 import { AiTwotoneHome } from "react-icons/ai";
 import { LuFileQuestion } from "react-icons/lu";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/auth";
-// import { signOut } from "next-auth/react";
-import UserAccountNav from "./UserAccountNav";
+
+
 import { ModeToggle } from "./SwitchThemeToDark";
 import DefaultSwitchITEN from "./ui/DefaultSwitchITEN";
+import NavBarSession from "./NavBarSession";
 
 // DA RIVEDERE
 import { useLanguages } from '../context/LanguageContext';
 import { translate } from '../../utils/translations';
 
-const NavBar = async () => {
-  
+const NavBar = () => {
+  // const { language } = useLanguages();
 
-  const session = await getServerSession(authOptions);
 
   return (
     <div className="bg-slate-300 py-4 border-b border-s-slate-400 w-full flex items-center justify-between">
@@ -134,7 +131,9 @@ l-29 42 -3 -42 c-3 -38 -6 -43 -28 -43 l-24 0 0 130 0 130 60 0 c51 0 65 -4
         <div>
         <ModeToggle />
       </div>
-        <div>
+        
+        <NavBarSession/>
+        {/* <div>
         {session?.user ? (
           // se è loggato distruggi la sessione attraverso un componente, cosi da non trasformare
           // la navbar in 'use client'
@@ -146,7 +145,7 @@ l-29 42 -3 -42 c-3 -38 -6 -43 -28 -43 l-24 0 0 130 0 130 60 0 c51 0 65 -4
             </Button>
           </Link>
         )}
-        </div>
+        </div> */}
         
       </div>
     </div>
